@@ -1,0 +1,269 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "For Rest",
+        "location": "Near by Artificial stream",
+        "longitude": "35.0488102009013",
+        "latitude": "48.45884520104286",
+        "description": "One of the best restaurants in town for having a healthy food and a variety of vegan dishes.",
+        "rating": "5/5",
+        "imagefile": null,
+        "url": "https://forrest.orty.io/",
+        "discipline": "Restaurant",
+        "objectid": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0488102009013,
+          48.45884520104286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "ShoPoChem",
+        "location": "Park of Culture and Leisure named after Shevchenko T.",
+        "longitude": "35.07007288863254",
+        "latitude": "48.46140787896133",
+        "description": "The most delicious coffee and hummus",
+        "rating": "4.8/5",
+        "imagefile": null,
+        "url": "https://www.instagram.com/shopochem_/",
+        "discipline": "Restaurant",
+        "objectid": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.07007288863254,
+          48.46140787896133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Dollar",
+        "location": "Boulevard Yavornitskogo",
+        "longitude": "35.069277636758116",
+        "latitude": "48.46006985920014",
+        "description": "European cuisine restaurant with a wide selection of seafood and vegan dishes",
+        "rating": "4.5/5",
+        "imagefile": null,
+        "url": "https://dollar.com.ua/",
+        "discipline": "Restaurant",
+        "objectid": "3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.069277636758116,
+          48.46006985920014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Damodara",
+        "location": "Volodymyr Monomakh Street",
+        "longitude": "35.046134",
+        "latitude": "48.468204",
+        "description": "This is a Vedic restaurant serving traditional Indian vegetarian dishes.",
+        "rating": "4.4/5",
+        "imagefile": null,
+        "url": "http://www.damodara.dp.ua/",
+        "discipline": "Restaurant",
+        "objectid": "4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.046134,
+          48.468204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Govinda",
+        "location": "Fair Descent",
+        "longitude": "35.0102264",
+        "latitude": "48.4709755",
+        "description": "Govinda Vegetarian Restaurant is a favorite vacation spot for those who know and appreciate vegetarian cuisine.",
+        "rating": "4.6/5",
+        "imagefile": null,
+        "url": "https://govinda.dp.ua/",
+        "discipline": "Restaurant",
+        "objectid": "5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0102264,
+          48.4709755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "gde_vse_bar",
+        "location": "Pisarzhevskoho Street",
+        "longitude": "35.0556185",
+        "latitude": "48.4494836",
+        "description": "This is a restaurant of modern homemade Ukrainian cuisine, with a good selection of vegetarian dishes.",
+        "rating": "4.6/5",
+        "imagefile": null,
+        "url": "https://www.instagram.com/gde_vse_bar/",
+        "discipline": "Restaurant",
+        "objectid": "6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0556185,
+          48.4494836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "WHITE ARROW",
+        "location": "Boulevard Slavi",
+        "longitude": "35.06962899129661",
+        "latitude": "48.41514923004066",
+        "description": "Cozy cafe with a wide variety of vegan milk for coffee",
+        "rating": "4,8/5",
+        "imagefile": null,
+        "url": "https://top20.ua/ru/dp/restorani-kafe-bari/kavyarni-ta-konditerski/white-arrow-kofeynya.html",
+        "discipline": "Cafe",
+        "objectid": "7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.06962899129661,
+          48.41514923004066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "ANNAPAVLOVA",
+        "location": "Intersection of Ivan Akinfiev and Sergei Efremov streets",
+        "longitude": "35.066195324692025",
+        "latitude": "48.41514923004066",
+        "description": "A place of inspiration and health",
+        "rating": "4.6/5",
+        "imagefile": null,
+        "url": "https://www.instagram.com/annapavlova_buffet/",
+        "discipline": "Cafe",
+        "objectid": "8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.066195324692025,
+          48.46081043401364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "MORZE coffee & sandwich",
+        "location": "Naberezhna Peremohy Street",
+        "longitude": "35.0743415",
+        "latitude": "48.4471618",
+        "description": "Great coffee shop in the business center",
+        "rating": "4.9/5",
+        "imagefile": null,
+        "url": "https://www.facebook.com/morzecoffee",
+        "discipline": "Cafe",
+        "objectid": "9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0743415,
+          48.4471618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Сup N Cup",
+        "location": "Naberezhna Peremohy Street, right in the mall",
+        "longitude": "35.067516",
+        "latitude": "48.4339945",
+        "description": "Nice matcha coffee with delicious samosas",
+        "rating": "4.9/5",
+        "imagefile": null,
+        "url": "https://www.instagram.com/cupncup.dp/",
+        "discipline": "Cafe",
+        "objectid": "10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.067516,
+          48.4339945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "DoubleDecker Cake and Coffee",
+        "location": "Dmitry Yavornitsky avenue, in the heart of the city",
+        "longitude": "35.048889",
+        "latitude": "48.463472",
+        "description": "Patisserie with traditional American and English desserts and home-roasted farm coffee.",
+        "rating": "4.7/5",
+        "imagefile": null,
+        "url": "https://doubledecker.shop/",
+        "discipline": "Cafe",
+        "objectid": "11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.048889,
+          48.463472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Vegan Cafe",
+        "location": "Pavel Nirinberg Street",
+        "longitude": "35.05526661533995",
+        "latitude": "48.46595661789494",
+        "description": "The cafeteria specializes only in delicious vegan drinks and snacks",
+        "rating": "4.3/5",
+        "imagefile": null,
+        "url": "https://www.facebook.com/vegancafednepr",
+        "discipline": "Cafe",
+        "objectid": "12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.05526661533995,
+          48.46595661789494
+        ]
+      }
+    }
+  ]
+}
