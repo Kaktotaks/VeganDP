@@ -80,10 +80,10 @@
 		E426B9F026C599BF00DF89E7 /* VeganDP */ = {
 			isa = PBXGroup;
 			children = (
+				E426B9F526C599BF00DF89E7 /* ViewController.swift */,
 				E44B89BD26CA4D79008ED8FC /* Map */,
 				E44B894B26C5A101008ED8FC /* Common */,
 				E44B894926C59E95008ED8FC /* Podfile */,
-				E426B9F526C599BF00DF89E7 /* ViewController.swift */,
 				E426B9F726C599BF00DF89E7 /* Main.storyboard */,
 				E426B9FF26C599C000DF89E7 /* Info.plist */,
 			);

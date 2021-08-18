@@ -7,13 +7,23 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class ViewController: UIViewController {
+    
+    // Создаем объект реалм
+    let realm = try? Realm()
+    
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
+    
     private var places: [Place] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Регистрируем ячейку для UITableView, по идентификатору Cell. Если вы создаете свою (кастомную) ячейку, вы должны указать ее класс вместо UITableViewCell
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         // Set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 48.458130, longitude: 35.047344)
@@ -42,11 +52,23 @@ class ViewController: UIViewController {
         mapView.addAnnotations(places)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Во время появления контроллера выполняем загрузку мест:
+//        self.requestDPPlaces()
+
+    }
+    
+    func requestDPPlaces() {
+// код для загрузки мест
+    }
+    
     private func loadInitialData() {
       // 1
       guard
         let fileName = Bundle.main.url(forResource: "VeganRestaurantCafeDP", withExtension: "geojson"),
-        let artworkData = try? Data(contentsOf: fileName)
+        let placesData = try? Data(contentsOf: fileName)
         else {
           return
       }
@@ -54,7 +76,7 @@ class ViewController: UIViewController {
       do {
         // 2
         let features = try MKGeoJSONDecoder()
-          .decode(artworkData)
+          .decode(placesData)
           .compactMap { $0 as? MKGeoJSONFeature }
         // 3
         let validPlaces = features.compactMap(Place.init)
@@ -67,6 +89,8 @@ class ViewController: UIViewController {
     }
     
 }
+
+//! - Расширение для карты
 
 private extension MKMapView {
   func centerToLocation(
@@ -100,5 +124,54 @@ extension ViewController: MKMapViewDelegate {
     }
     
 }
+
+//! - Расширения для таблицы
+
+extension ViewController: UITableViewDataSource {
+
+    /// Метод должен возвращать количество ячеек в таблице
+    /// - Parameters:
+    ///   - tableView: Наша таблица (UITableView)
+    ///   - section: Числовое значение, намер секции для которого мы возвращаем количество ячеек. Этот параметр нужен чтобы мы могли добавить условие, если секция 0, вернуть N ячеек, если секция 1, вернуть X ячеек и т д. Мы пока работаем только с 1 секцией, так что нам этот параметр не важен.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.places.count
+    }
+
+    /// Создаем ячейку для нашей таблицы и возвращаем ее
+    /// - Parameters:
+    ///   - tableView: Наша таблица (UITableView)
+    ///   - indexPath: Индекс  ячейки которую мы создаем. Имеет параметр .section и .row, мы используем .row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        // Достаем зарегистрированную ячейку по идентификатору Cell, если такой нет, возвращаем экземпляр UITableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else {
+            return UITableViewCell()
+        }
+
+        // Указываем текст который будет отображаться в ячейке - он храниться в проперти title у объекта Movie. Но сначала, чтобы обратиться к объекту Movie, достаем его из массива, обращаясь к нему по индексу [indexPath.row]
+        cell.textLabel?.text = self.places[indexPath.row].title
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+
+    /// Метод срабатывает по нажатию на ячейку tableView
+    /// - Parameters:
+    ///   - tableView: Наша таблица (UITableView)
+    ///   - indexPath: Индекс выбранной ячейки. Имеет параметр .section и .row, мы используем .row
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        let identifier = String(describing: MediaDetailViewController.self)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? MediaDetailViewController {
+            
+//            detailViewController.movie = self.movies[indexPath.row]
+            
+//            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
+
 
 
