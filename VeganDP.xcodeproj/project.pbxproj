@@ -18,6 +18,9 @@
 		E44B89C426CA6134008ED8FC /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44B89C326CA6134008ED8FC /* Place.swift */; };
 		E44B89F726CBB8DE008ED8FC /* PlacesViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44B89F626CBB8DE008ED8FC /* PlacesViews.swift */; };
 		E44B89FD26CC03A5008ED8FC /* VeganRestaurantCafeDP.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E44B89FC26CC03A4008ED8FC /* VeganRestaurantCafeDP.geojson */; };
+		E4BFF0B326CEBA5B000CF689 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF0B226CEBA5B000CF689 /* PlaceDetailViewController.swift */; };
+		E4BFF0B726CFA686000CF689 /* CustomPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */; };
+		E4BFF0B826CFA686000CF689 /* CustomPlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		E44B89F626CBB8DE008ED8FC /* PlacesViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViews.swift; sourceTree = "<group>"; };
 		E44B89FC26CC03A4008ED8FC /* VeganRestaurantCafeDP.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VeganRestaurantCafeDP.geojson; sourceTree = "<group>"; };
 		E44B89FE26CC097B008ED8FC /* CustomLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CustomLocation.gpx; sourceTree = "<group>"; };
+		E4BFF0B226CEBA5B000CF689 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
+		E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlacesTableViewCell.swift; sourceTree = "<group>"; };
+		E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlacesTableViewCell.xib; sourceTree = "<group>"; };
 		F7E8015155A954732EF4FD8E /* Pods_VeganDP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeganDP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +86,9 @@
 		E426B9F026C599BF00DF89E7 /* VeganDP */ = {
 			isa = PBXGroup;
 			children = (
+				E4BFF0B426CFA5D8000CF689 /* Cells */,
 				E426B9F526C599BF00DF89E7 /* ViewController.swift */,
+				E4BFF0B226CEBA5B000CF689 /* PlaceDetailViewController.swift */,
 				E44B89BD26CA4D79008ED8FC /* Map */,
 				E44B894B26C5A101008ED8FC /* Common */,
 				E44B894926C59E95008ED8FC /* Podfile */,
@@ -118,6 +126,15 @@
 				E44B89FC26CC03A4008ED8FC /* VeganRestaurantCafeDP.geojson */,
 			);
 			path = jsonModels;
+			sourceTree = "<group>";
+		};
+		E4BFF0B426CFA5D8000CF689 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */,
+				E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E9CA2DA2DC597EF8E455BF0C /* Pods */ = {
@@ -188,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BFF0B826CFA686000CF689 /* CustomPlacesTableViewCell.xib in Resources */,
 				E44B89FD26CC03A5008ED8FC /* VeganRestaurantCafeDP.geojson in Resources */,
 				E426B9FE26C599C000DF89E7 /* LaunchScreen.storyboard in Resources */,
 				E426B9FB26C599C000DF89E7 /* Assets.xcassets in Resources */,
@@ -246,8 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44B89F726CBB8DE008ED8FC /* PlacesViews.swift in Sources */,
+				E4BFF0B726CFA686000CF689 /* CustomPlacesTableViewCell.swift in Sources */,
 				E426B9F626C599BF00DF89E7 /* ViewController.swift in Sources */,
 				E426B9F226C599BF00DF89E7 /* AppDelegate.swift in Sources */,
+				E4BFF0B326CEBA5B000CF689 /* PlaceDetailViewController.swift in Sources */,
 				E44B89C426CA6134008ED8FC /* Place.swift in Sources */,
 				E426B9F426C599BF00DF89E7 /* SceneDelegate.swift in Sources */,
 			);

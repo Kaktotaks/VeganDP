@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Регистрируем ячейку для UITableView, по идентификатору Cell. Если вы создаете свою (кастомную) ячейку, вы должны указать ее класс вместо UITableViewCell
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
         
         // Set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 48.458130, longitude: 35.047344)
@@ -129,27 +129,21 @@ extension ViewController: MKMapViewDelegate {
 
 extension ViewController: UITableViewDataSource {
 
-    /// Метод должен возвращать количество ячеек в таблице
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - section: Числовое значение, намер секции для которого мы возвращаем количество ячеек. Этот параметр нужен чтобы мы могли добавить условие, если секция 0, вернуть N ячеек, если секция 1, вернуть X ячеек и т д. Мы пока работаем только с 1 секцией, так что нам этот параметр не важен.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.places.count
     }
 
-    /// Создаем ячейку для нашей таблицы и возвращаем ее
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - indexPath: Индекс  ячейки которую мы создаем. Имеет параметр .section и .row, мы используем .row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        // Достаем зарегистрированную ячейку по идентификатору Cell, если такой нет, возвращаем экземпляр UITableViewCell
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-            return UITableViewCell()
-        }
-
-        // Указываем текст который будет отображаться в ячейке - он храниться в проперти title у объекта Movie. Но сначала, чтобы обратиться к объекту Movie, достаем его из массива, обращаясь к нему по индексу [indexPath.row]
-        cell.textLabel?.text = self.places[indexPath.row].title
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+//            return UITableViewCell()
+//        }
+//
+//        cell.textLabel?.text = self.places[indexPath.row].title
+//        cell.selectionStyle = .none
+//
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
+        cell.configure(with: places[indexPath.row])
         return cell
     }
 }
