@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        // Регистрируем ячейку для UITableView, по идентификатору Cell. Если вы создаете свою (кастомную) ячейку, вы должны указать ее класс вместо UITableViewCell
         self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
         
         // Set initial location in Honolulu
@@ -59,10 +59,7 @@ class ViewController: UIViewController {
 //        self.requestDPPlaces()
 
     }
-    
-    func requestDPPlaces() {
-// код для загрузки мест
-    }
+        
     
     private func loadInitialData() {
       // 1
@@ -135,13 +132,7 @@ extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-//            return UITableViewCell()
-//        }
-//
-//        cell.textLabel?.text = self.places[indexPath.row].title
-//        cell.selectionStyle = .none
-//
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
         cell.configure(with: places[indexPath.row])
         return cell
@@ -150,22 +141,20 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
 
-    /// Метод срабатывает по нажатию на ячейку tableView
-    /// - Parameters:
-    ///   - tableView: Наша таблица (UITableView)
-    ///   - indexPath: Индекс выбранной ячейки. Имеет параметр .section и .row, мы используем .row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let identifier = String(describing: MediaDetailViewController.self)
+        let identifier = String(describing: PlaceDetailViewController.self)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? MediaDetailViewController {
+        if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? PlaceDetailViewController {
             
 //            detailViewController.movie = self.movies[indexPath.row]
             
-//            self.navigationController?.pushViewController(detailViewController, animated: true)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
+
+}
 
 
 
