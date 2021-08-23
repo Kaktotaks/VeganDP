@@ -16,6 +16,7 @@ class Place: NSObject, MKAnnotation {
   let rating: String?
   let descriptionText: String?
   let placeurl: String?
+  let phoneNum: String?
   let coordinate: CLLocationCoordinate2D
   
   init(
@@ -25,6 +26,7 @@ class Place: NSObject, MKAnnotation {
     rating: String?,
     descriptionText: String?,
     placeurl: String?,
+    phoneNum: String?,
     coordinate: CLLocationCoordinate2D
   ) {
     self.title = title
@@ -33,7 +35,9 @@ class Place: NSObject, MKAnnotation {
     self.rating = rating
     self.descriptionText = descriptionText
     self.placeurl = placeurl
+    self.phoneNum = phoneNum
     self.coordinate = coordinate
+    
     
     super.init()
   }
@@ -56,6 +60,7 @@ class Place: NSObject, MKAnnotation {
       rating = properties["rating"] as? String
       descriptionText = properties["descriptionText"] as? String
       placeurl = properties["placeurl"] as? String
+      phoneNum = properties["phoneNum"] as? String
       coordinate = point.coordinate
       super.init()
     }

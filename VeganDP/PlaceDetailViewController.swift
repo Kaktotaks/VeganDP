@@ -8,13 +8,18 @@
 import Foundation
 import RealmSwift
 import WebKit
+import SafariServices
 
 class PlaceDetailViewController: UIViewController, WKUIDelegate{
-
     
+    
+    @IBOutlet weak var locationTypeImageView: UIImageView!
     @IBOutlet weak var detailWebView: WKWebView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var locationTitleLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var phoneNumLabel: UILabel!
     
     var place: Place? = nil
     
@@ -23,6 +28,10 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         
         self.descriptionLabel.text = self.place?.descriptionText
         self.ratingLabel.text = self.place?.rating
+        self.locationTitleLabel.text = self.place?.title
+        self.addressLabel.text = self.place?.subtitle
+        self.locationTypeImageView.image = self.place?.image
+        self.phoneNumLabel.text = self.place?.phoneNum
         
     }
     
@@ -30,23 +39,46 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-//        var placesurl = self.place?.placeurl
-//        let myURL = URL(string: "\(placesurl)")
-//        let myRequest = URLRequest(url: myURL)
-//        detailWebView.load(myRequest)
-        
-        var placesurl = self.place?.placeurl
-        let myRequest = URLRequest(url: placesurl)
-        detailWebView.load(myRequest)
-        
-        
-        
+        getWebAddress()
         
     }
     
-   
-
+    // unwrap String property in URL
+    func getWebAddress(){
+        if let placesURLString = self.place?.placeurl {
+            if let placesURL = URL(string: placesURLString) {
+                let myRequest = URLRequest(url: placesURL)
+                detailWebView.load(myRequest)
+            }
+        }
+    }
     
+    
+    @IBAction func goToSafariWebButtonPressed(_ sender: Any) {
+        if let placesURLString = self.place?.placeurl {
+            if let placesURL = URL(string: placesURLString){
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = true
+                
+                let web = SFSafariViewController(url: placesURL, configuration: config)
+                present(web, animated: true)
+            }
+        }
+    }
+    
+    // MARK: добавить вызов по нажатию на кнопку телефона
+//    func makePhoneCall(phoneNumber: String) {
+//        if let phoneURLString = self.place?.phoneNum {
+//            if let phoneURL = URL(string: phoneURLString){
+//            let alert = UIAlertController(title: ("Call " + (place?.phoneNum)! + "?"), message: nil, preferredStyle: .alert)
+//                   alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+//                       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+//                   }))
+//
+//                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//                   self.present(alert, animated: true, completion: nil)
+//               }
+//    }
+//    }
     
 }

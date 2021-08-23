@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CustomPlacesTableViewCell: UITableViewCell {
 
@@ -21,6 +22,8 @@ class CustomPlacesTableViewCell: UITableViewCell {
 
     
     @IBAction func locationButtonPressed(_ sender: Any) {
+        
+        
     }
     
     func configure(with place: Place){

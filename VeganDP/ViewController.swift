@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         
         self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
         
@@ -30,9 +31,9 @@ class ViewController: UIViewController {
         mapView.centerToLocation (initialLocation)
         
         //Adding a scale and restriction to the map (Visual area)
-        let oahuCenter = CLLocation(latitude: 48.458130, longitude: 35.047344)
+        let dniproCenter = CLLocation(latitude: 48.458130, longitude: 35.047344)
         let region = MKCoordinateRegion(
-          center: oahuCenter.coordinate,
+          center: dniproCenter.coordinate,
           latitudinalMeters: 15000,
           longitudinalMeters: 15000)
         mapView.setCameraBoundary(
@@ -147,8 +148,8 @@ extension ViewController: UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? PlaceDetailViewController {
-            
-//            detailViewController.movie = self.movies[indexPath.row]
+            detailViewController.place = self.places[indexPath.row]
+
             
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
