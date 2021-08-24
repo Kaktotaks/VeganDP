@@ -20,6 +20,9 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneNumLabel: UILabel!
+    @IBOutlet weak var dlGradientView: GradientView!
+    @IBOutlet weak var rlGradientView: GradientView!
+    @IBOutlet weak var pnGradientView: GradientView!
     
     var place: Place? = nil
     
@@ -32,6 +35,10 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         self.addressLabel.text = self.place?.subtitle
         self.locationTypeImageView.image = self.place?.image
         self.phoneNumLabel.text = self.place?.phoneNum
+        
+        self.dlGradientView.layer.cornerRadius = 16
+        self.rlGradientView.layer.cornerRadius = 16
+        self.pnGradientView.layer.cornerRadius = 16
         
     }
     
