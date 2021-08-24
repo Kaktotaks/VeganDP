@@ -26,6 +26,8 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     
     var place: Place? = nil
     
+    let realm = try? Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +50,30 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         
         getWebAddress()
         
+        self.title = self.place?.title
+        
+        let logoutBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addToFavouriteButtonPressed))
+        self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
+        
     }
+    
+    @IBAction func addToFavouriteButtonPressed(_ sender: Any) {
+        let placeRealm = FavouritePlacesRealm()
+        
+        placeRealm.descriptionText = self.place?.descriptionText
+        placeRealm.discipline = self.place?.discipline
+        placeRealm.locationName = self.place?.locationName
+        placeRealm.phoneNum = self.place?.phoneNum
+        placeRealm.placeurl = self.place?.placeurl
+        placeRealm.rating = self.place?.rating
+        placeRealm.title = self.place?.title ?? ""
+
+        try? realm?.write {
+            realm?.add(placeRealm)
+        }
+    }
+    
+    
     
     // unwrap String property in URL
     func getWebAddress(){
