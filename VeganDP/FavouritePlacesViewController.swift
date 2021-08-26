@@ -20,6 +20,9 @@ class FavouritePlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
@@ -53,5 +56,9 @@ extension FavouritePlacesViewController:UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
 
+    
+}
+
+extension FavouritePlacesViewController: UITableViewDelegate {
     
 }

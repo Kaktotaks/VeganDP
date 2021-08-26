@@ -47,6 +47,9 @@
                                     <constraint firstAttribute="height" constant="40" id="hAh-qT-Yof"/>
                                 </constraints>
                                 <state key="normal" image="menu"/>
+                                <connections>
+                                    <action selector="menuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3g-kd-UHA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -233,11 +236,11 @@
             </objects>
             <point key="canvasLocation" x="-1552" y="658"/>
         </scene>
-        <!--Item-->
+        <!--Favourites-->
         <scene sceneID="KvF-Av-i11">
             <objects>
                 <navigationController id="N8m-ZR-uTy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="a1y-hJ-oNg"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="favorite" id="a1y-hJ-oNg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fzO-9l-Un0">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -248,7 +251,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f50-Ga-0Nh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-653" y="1152"/>
+            <point key="canvasLocation" x="-653" y="1596"/>
         </scene>
         <!--Favourite Places View Controller-->
         <scene sceneID="7L2-Zg-wub">
@@ -289,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2X-aU-ehQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="1151"/>
+            <point key="canvasLocation" x="247" y="1596"/>
         </scene>
         <!--Places-->
         <scene sceneID="ldy-DY-qKD">
@@ -314,6 +317,7 @@
     <resources>
         <image name="comments" width="64" height="64"/>
         <image name="compass" width="32" height="32"/>
+        <image name="favorite" width="32" height="32"/>
         <image name="menu" width="64" height="64"/>
         <image name="phone" width="64" height="64"/>
         <image name="plantHeart" width="64" height="64"/>

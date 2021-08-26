@@ -22,11 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        self.title = "VeganDP"
         
         self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
         
-        // Set initial location in Honolulu
+        // Set initial location in DP
         let initialLocation = CLLocation(latitude: 48.458130, longitude: 35.047344)
         mapView.centerToLocation (initialLocation)
         
@@ -85,6 +85,19 @@ class ViewController: UIViewController {
         print("Unexpected error: \(error).")
       }
     }
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        UITableView.animate(withDuration: 1,
+                            delay: 0,
+                            usingSpringWithDamping: 10,
+                            initialSpringVelocity: 0) {
+            self.tableView.frame = CGRect(x: 0,
+                                          y: -2000,
+                                          width: 100,
+                                          height: 100)
+        }
+    }
+    
     
 }
 
