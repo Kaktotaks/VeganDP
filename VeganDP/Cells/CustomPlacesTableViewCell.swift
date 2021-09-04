@@ -21,11 +21,12 @@ class CustomPlacesTableViewCell: UITableViewCell {
     
     var delegate: CustomPlacesTableViewCellDelegate?
     
-    @IBOutlet weak var mainTableView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.mainTableView.layer.cornerRadius = 24    }
+        self.secondView.layer.cornerRadius = 24    }
 
     
     @IBAction func locationButtonPressed(_ sender: Any) {
