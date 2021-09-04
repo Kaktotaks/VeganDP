@@ -58,12 +58,25 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Во время появления контроллера выполняем загрузку мест:
-        //        self.requestDPPlaces()
         
     }
     
+    @IBAction func mapTypeSwitchPressed(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            self.mapView.mapType = .standard
+        } else {
+            self.mapView.mapType = .hybridFlyover
+        }
+    }
     
+    @IBAction func showTraficSwitchPressed(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            self.mapView.showsTraffic = false
+        } else {
+            self.mapView.showsTraffic = true
+        }
+    }
     
     
     

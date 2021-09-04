@@ -16,12 +16,10 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     @IBOutlet weak var locationTypeImageView: UIImageView!
     @IBOutlet weak var detailWebView: WKWebView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var dlGradientView: GradientView!
-    @IBOutlet weak var rlGradientView: GradientView!
     @IBOutlet weak var pnGradientView: GradientView!
     
     var place: Place? = nil
@@ -32,14 +30,12 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         super.viewDidLoad()
         
         self.descriptionLabel.text = self.place?.descriptionText
-        self.ratingLabel.text = self.place?.rating
         self.locationTitleLabel.text = self.place?.title
         self.addressLabel.text = self.place?.subtitle
         self.locationTypeImageView.image = self.place?.image
         self.phoneNumLabel.text = self.place?.phoneNum
         
         self.dlGradientView.layer.cornerRadius = 16
-        self.rlGradientView.layer.cornerRadius = 16
         self.pnGradientView.layer.cornerRadius = 16
         
     }
@@ -67,7 +63,6 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         placeRealm.locationName = self.place?.locationName
         placeRealm.phoneNum = self.place?.phoneNum
         placeRealm.placeurl = self.place?.placeurl
-        placeRealm.rating = self.place?.rating
         placeRealm.title = self.place?.title ?? ""
 
         try? realm?.write {
