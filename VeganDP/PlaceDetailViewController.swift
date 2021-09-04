@@ -68,6 +68,18 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         try? realm?.write {
             realm?.add(placeRealm)
         }
+        self.showAlert()
+    }
+    
+    // Alert
+    func showAlert() {
+        let alert = UIAlertController(title: "Added to favourites 💚 ! ", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK 👌", style: .cancel, handler: { action in
+            print("Tapped OK 👌")
+        }))
+        
+        present(alert, animated: true)
     }
     
     
@@ -95,7 +107,7 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         }
     }
     
-    // MARK: добавить вызов по нажатию на кнопку телефона
+    // MARK: добавить вызов по нажатию на кнопку телефона ???
     func makePhoneCall(phoneNumber: String) {
         if let phoneURLString = self.place?.phoneNum {
             if let phoneURL = URL(string: phoneURLString){
