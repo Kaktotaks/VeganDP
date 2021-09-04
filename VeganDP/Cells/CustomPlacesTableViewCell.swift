@@ -8,6 +8,10 @@
 import UIKit
 import MapKit
 
+protocol CustomPlacesTableViewCellDelegate {
+    func openRegion(forItem item: Int)
+}
+
 class CustomPlacesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellImageView: UIImageView!
@@ -15,15 +19,17 @@ class CustomPlacesTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    var delegate: CustomPlacesTableViewCellDelegate?
+    
+    @IBOutlet weak var mainTableView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        self.mainTableView.layer.cornerRadius = 24    }
 
     
     @IBAction func locationButtonPressed(_ sender: Any) {
-        
-        
+        self.delegate?.openRegion(forItem: self.tag)
     }
     
     func configure(with place: Place){

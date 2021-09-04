@@ -55,6 +55,8 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         let logoutBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addToFavouriteButtonPressed))
         self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
         
+        
+        
     }
     
     @IBAction func addToFavouriteButtonPressed(_ sender: Any) {
@@ -99,18 +101,18 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     }
     
     // MARK: добавить вызов по нажатию на кнопку телефона
-//    func makePhoneCall(phoneNumber: String) {
-//        if let phoneURLString = self.place?.phoneNum {
-//            if let phoneURL = URL(string: phoneURLString){
-//            let alert = UIAlertController(title: ("Call " + (place?.phoneNum)! + "?"), message: nil, preferredStyle: .alert)
-//                   alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
-//                       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-//                   }))
-//
-//                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                   self.present(alert, animated: true, completion: nil)
-//               }
-//    }
-//    }
+    func makePhoneCall(phoneNumber: String) {
+        if let phoneURLString = self.place?.phoneNum {
+            if let phoneURL = URL(string: phoneURLString){
+            let alert = UIAlertController(title: ("Call " + (place?.phoneNum)! + "?"), message: nil, preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
+                       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
+                   }))
+
+                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                   self.present(alert, animated: true, completion: nil)
+               }
+    }
+    }
     
 }

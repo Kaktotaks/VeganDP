@@ -64,6 +64,9 @@ class ViewController: UIViewController {
     }
     
     
+    
+    
+    
     private func loadInitialData() {
         // 1
         guard
@@ -201,6 +204,8 @@ extension ViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
         cell.configure(with: places[indexPath.row])
+        cell.delegate = self
+        cell.tag = indexPath.row
         return cell
     }
 }
@@ -232,6 +237,26 @@ extension ViewController: UITableViewDelegate {
         }
     }
     
+}
+
+
+extension ViewController: CustomPlacesTableViewCellDelegate {
+    func openRegion(forItem item: Int) {
+        let geoObject = self.places[item]
+        
+        let latitude = geoObject.latitude ?? 0
+        let longitude = geoObject.longitude ?? 0
+        
+        let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let region = MKCoordinateRegion(center: coordinates,
+                                        latitudinalMeters: 500,
+                                        longitudinalMeters: 500)
+        self.mapView.setRegion(region, animated: true)
+    }
+    
+    //    func openRegion(_ region: MKCoordinateRegion) {
+    //        self.mapView.setRegion(region, animated: true)
+    //    }
 }
 
 

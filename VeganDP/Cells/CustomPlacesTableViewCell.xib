@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,10 +26,17 @@
                                     <constraint firstAttribute="width" secondItem="hvJ-B3-eoU" secondAttribute="height" multiplier="1:1" id="KwZ-6L-Eu2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locationTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h15-ud-joD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h15-ud-joD">
                                 <rect key="frame" x="100" y="8" width="289" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="locationTitle">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-A8-i2a">
@@ -40,19 +48,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-ZX-IZX">
-                                <rect key="frame" x="506" y="14" width="71" height="72"/>
-                                <state key="normal" backgroundImage="locationFinder"/>
-                                <connections>
-                                    <action selector="locationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3dX-AT-BU0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgf-nG-zEc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgf-nG-zEc">
                                 <rect key="frame" x="100" y="53" width="289" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="ROP-ZV-dPC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Herculanum" family="Herculanum" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -62,12 +63,23 @@
                                     <constraint firstAttribute="width" constant="50" id="PDh-YB-AsL"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-ZX-IZX">
+                                <rect key="frame" x="527" y="25" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7aL-ho-v0s"/>
+                                    <constraint firstAttribute="height" constant="50" id="d3N-Ga-67A"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="locationFinder"/>
+                                <connections>
+                                    <action selector="locationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3dX-AT-BU0"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="hgf-nG-zEc" firstAttribute="leading" secondItem="h15-ud-joD" secondAttribute="leading" id="0xI-B8-Uoe"/>
-                            <constraint firstItem="SFV-ZX-IZX" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="14" id="1nz-So-5pp"/>
                             <constraint firstItem="VAE-yM-SbU" firstAttribute="leading" secondItem="h15-ud-joD" secondAttribute="trailing" constant="8" id="4I1-ia-cU1"/>
-                            <constraint firstItem="SFV-ZX-IZX" firstAttribute="leading" secondItem="z7b-A8-i2a" secondAttribute="trailing" constant="8" id="5Am-BZ-CBF"/>
+                            <constraint firstItem="SFV-ZX-IZX" firstAttribute="leading" secondItem="z7b-A8-i2a" secondAttribute="trailing" constant="29" id="5Am-BZ-CBF"/>
                             <constraint firstItem="h15-ud-joD" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="8" id="ABl-P2-I3f"/>
                             <constraint firstItem="hvJ-B3-eoU" firstAttribute="leading" secondItem="vLf-mJ-2M3" secondAttribute="leading" constant="8" id="BH1-D1-T34"/>
                             <constraint firstAttribute="bottom" secondItem="hgf-nG-zEc" secondAttribute="bottom" constant="8" id="Cxr-2B-zeP"/>
@@ -76,8 +88,8 @@
                             <constraint firstAttribute="bottom" secondItem="VAE-yM-SbU" secondAttribute="bottom" constant="25.5" id="Id0-5u-pmb"/>
                             <constraint firstItem="hvJ-B3-eoU" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="8" id="S7k-kq-bY7"/>
                             <constraint firstItem="hgf-nG-zEc" firstAttribute="top" secondItem="h15-ud-joD" secondAttribute="bottom" constant="6" id="SW5-uR-qQ0"/>
-                            <constraint firstAttribute="bottom" secondItem="SFV-ZX-IZX" secondAttribute="bottom" constant="14" id="YBP-dN-PLH"/>
                             <constraint firstAttribute="bottom" secondItem="hvJ-B3-eoU" secondAttribute="bottom" constant="8" id="ZBv-K4-or7"/>
+                            <constraint firstItem="SFV-ZX-IZX" firstAttribute="centerY" secondItem="vLf-mJ-2M3" secondAttribute="centerY" id="eAx-9B-aCw"/>
                             <constraint firstItem="hgf-nG-zEc" firstAttribute="trailing" secondItem="h15-ud-joD" secondAttribute="trailing" id="h54-df-ygr"/>
                             <constraint firstItem="z7b-A8-i2a" firstAttribute="centerY" secondItem="hvJ-B3-eoU" secondAttribute="centerY" id="hjP-tc-psA"/>
                             <constraint firstItem="z7b-A8-i2a" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="24" id="i4c-F4-cWq"/>
@@ -100,6 +112,7 @@
                 <outlet property="cellImageView" destination="hvJ-B3-eoU" id="gCd-w0-aqm"/>
                 <outlet property="descriptionLabel" destination="hgf-nG-zEc" id="NWy-Ki-vBl"/>
                 <outlet property="locationTitleLabel" destination="h15-ud-joD" id="v6u-lv-dci"/>
+                <outlet property="mainTableView" destination="H2p-sc-9uM" id="g1K-eY-h8F"/>
                 <outlet property="ratingLabel" destination="z7b-A8-i2a" id="Mbk-Ft-9h6"/>
             </connections>
             <point key="canvasLocation" x="261.59420289855075" y="86.383928571428569"/>
@@ -108,5 +121,8 @@
     <resources>
         <image name="locationFinder" width="64" height="64"/>
         <image name="plantHeart" width="64" height="64"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
