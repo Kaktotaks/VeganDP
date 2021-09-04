@@ -104,7 +104,7 @@ class ViewController: UIViewController {
         }
     }
     
-    // Show tableview
+    //MARK: Show tableView animations
     @IBAction func placesMenuButtonPressed(_ sender: Any) {
         UITableView.animate(withDuration: 1,
                             delay: 0,
@@ -132,8 +132,7 @@ class ViewController: UIViewController {
                                              height: 50) }
     }
     
-    
-    // Hide tableView
+    //MARK: Hide tableView animations
     @IBAction func closeMenuButtonPressed(_ sender: Any) {
         
         UITableView.animate(withDuration: 1,
@@ -166,10 +165,7 @@ class ViewController: UIViewController {
     
 }
 
-
-
-
-//! - Расширение для карты
+//MARK: Map extensions
 
 private extension MKMapView {
     func centerToLocation(
@@ -204,7 +200,7 @@ extension ViewController: MKMapViewDelegate {
     
 }
 
-//! - Расширения для таблицы
+//MARK: TableView extensions
 
 extension ViewController: UITableViewDataSource {
     
@@ -266,10 +262,6 @@ extension ViewController: CustomPlacesTableViewCellDelegate {
                                         longitudinalMeters: 500)
         self.mapView.setRegion(region, animated: true)
     }
-    
-    //    func openRegion(_ region: MKCoordinateRegion) {
-    //        self.mapView.setRegion(region, animated: true)
-    //    }
 }
 
 

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="585" height="112"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLf-mJ-2M3">
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLf-mJ-2M3">
                         <rect key="frame" x="8" y="8" width="569" height="96"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvJ-B3-eoU">
@@ -31,19 +32,20 @@
                                     <fragment content="locationTitle">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="20" name="MarkerFelt-Thin"/>
+                                            <font key="NSFont" size="19" name="Optima-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" systemColor="systemGray5Color"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-A8-i2a">
                                 <rect key="frame" x="429" y="24" width="53" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="QMX-fR-1sP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -56,12 +58,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plantHeart" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-yM-SbU">
-                                <rect key="frame" x="381" y="22" width="50" height="48.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="PDh-YB-AsL"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-ZX-IZX">
                                 <rect key="frame" x="511" y="23" width="50" height="50"/>
                                 <constraints>
@@ -73,6 +69,12 @@
                                     <action selector="locationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3dX-AT-BU0"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plantHeart" translatesAutoresizingMaskIntoConstraints="NO" id="VAE-yM-SbU">
+                                <rect key="frame" x="381" y="16" width="50" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="PDh-YB-AsL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -83,8 +85,7 @@
                             <constraint firstItem="hvJ-B3-eoU" firstAttribute="leading" secondItem="vLf-mJ-2M3" secondAttribute="leading" constant="8" id="BH1-D1-T34"/>
                             <constraint firstAttribute="bottom" secondItem="hgf-nG-zEc" secondAttribute="bottom" constant="8" id="Cxr-2B-zeP"/>
                             <constraint firstItem="h15-ud-joD" firstAttribute="leading" secondItem="hvJ-B3-eoU" secondAttribute="trailing" constant="8" id="DAM-Bg-I3D"/>
-                            <constraint firstAttribute="trailing" secondItem="VAE-yM-SbU" secondAttribute="trailing" constant="138" id="Hek-sj-d7o"/>
-                            <constraint firstAttribute="bottom" secondItem="VAE-yM-SbU" secondAttribute="bottom" constant="25.5" id="Id0-5u-pmb"/>
+                            <constraint firstItem="VAE-yM-SbU" firstAttribute="centerY" secondItem="vLf-mJ-2M3" secondAttribute="centerY" id="IKh-1M-3Dl"/>
                             <constraint firstItem="hvJ-B3-eoU" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="8" id="S7k-kq-bY7"/>
                             <constraint firstItem="hgf-nG-zEc" firstAttribute="top" secondItem="h15-ud-joD" secondAttribute="bottom" constant="6" id="SW5-uR-qQ0"/>
                             <constraint firstAttribute="bottom" secondItem="hvJ-B3-eoU" secondAttribute="bottom" constant="8" id="ZBv-K4-or7"/>
@@ -93,7 +94,6 @@
                             <constraint firstItem="z7b-A8-i2a" firstAttribute="centerY" secondItem="hvJ-B3-eoU" secondAttribute="centerY" id="hjP-tc-psA"/>
                             <constraint firstItem="z7b-A8-i2a" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="24" id="i4c-F4-cWq"/>
                             <constraint firstItem="z7b-A8-i2a" firstAttribute="leading" secondItem="VAE-yM-SbU" secondAttribute="trailing" constant="-2" id="lLW-Ra-qFg"/>
-                            <constraint firstItem="VAE-yM-SbU" firstAttribute="top" secondItem="vLf-mJ-2M3" secondAttribute="top" constant="22" id="sG1-4T-FJs"/>
                             <constraint firstAttribute="trailing" secondItem="SFV-ZX-IZX" secondAttribute="trailing" constant="8" id="vqK-f2-tBg"/>
                         </constraints>
                     </view>
@@ -121,5 +121,8 @@
     <resources>
         <image name="placeholder" width="128" height="128"/>
         <image name="plantHeart" width="64" height="64"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

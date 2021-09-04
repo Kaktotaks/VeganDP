@@ -19,6 +19,7 @@ class Place: NSObject, MKAnnotation {
     let phoneNum: String?
     let longitude: Double?
     let latitude: Double?
+    let objectID: Int?
     let coordinate: CLLocationCoordinate2D
     
     init(
@@ -31,6 +32,7 @@ class Place: NSObject, MKAnnotation {
         phoneNum: String?,
         longitude: Double?,
         latitude: Double?,
+        objectID: Int?,
         coordinate: CLLocationCoordinate2D
     ) {
         self.title = title
@@ -43,6 +45,7 @@ class Place: NSObject, MKAnnotation {
         self.longitude = longitude
         self.latitude = latitude
         self.coordinate = coordinate
+        self.objectID = objectID
         
         
         super.init()
@@ -67,6 +70,8 @@ class Place: NSObject, MKAnnotation {
         descriptionText = properties["descriptionText"] as? String
         placeurl = properties["placeurl"] as? String
         phoneNum = properties["phoneNum"] as? String
+        objectID = properties["objectID"] as? Int
+        
         
         var longitude: Double = 0
         

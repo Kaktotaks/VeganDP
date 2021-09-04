@@ -119,7 +119,7 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "gde_vse_bar",
+        "title": "Gde vse bar",
         "location": "Pisarzhevskoho Street",
         "longitude": "35.0556185",
         "latitude": "48.4494836",
@@ -142,12 +142,35 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "WHITE ARROW",
+        "title": "V glavnih rolyah",
+        "location": "Magdeburg Law Street, 2",
+        "longitude": "35.05063147622568",
+        "latitude": "48.46376796266736",
+        "descriptionText": "Nice and cozy restaurant in loft style whith friendly and helpful staff. There are good variety of vegan dishes.",
+        "rating": "4.7/5",
+        "imagefile": null,
+        "placeurl": "https://www.facebook.com/vglavnihrolyah/",
+        "discipline": "Restaurant",
+        "phoneNum": "+380 96 283 8121",
+        "objectid": "13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.05063147622568,
+          48.46376796266736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "White Arrow",
         "location": "Boulevard Slavi",
         "longitude": "35.06962899129661",
         "latitude": "48.41514923004066",
         "descriptionText": "Cozy cafe with a wide variety of vegan milk for coffee",
-        "rating": "4,8/5",
+        "rating": "4.8/5",
         "imagefile": null,
         "placeurl": "https://top20.ua/ru/dp/restorani-kafe-bari/kavyarni-ta-konditerski/white-arrow-kofeynya.html",
         "discipline": "Cafe",
@@ -165,7 +188,7 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "ANNAPAVLOVA",
+        "title": "Anna Pavlova",
         "location": "Intersection of Ivan Akinfiev and Sergei Efremov streets",
         "longitude": "35.066195324692025",
         "latitude": "48.41514923004066",
