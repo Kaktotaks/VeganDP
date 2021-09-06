@@ -70,7 +70,7 @@ class Place: NSObject, MKAnnotation {
         descriptionText = properties["descriptionText"] as? String
         placeurl = properties["placeurl"] as? String
         phoneNum = properties["phoneNum"] as? String
-        objectID = properties["objectID"] as? Int
+        objectID = properties["objectid"] as? Int
         
         
         var longitude: Double = 0

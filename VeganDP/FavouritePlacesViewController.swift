@@ -79,23 +79,30 @@ extension FavouritePlacesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            tableView.beginUpdates()
+            
+//            self.deletePlaces(objectID: self.places[indexPath.row].objectid)
+//            self.places = self.getPlaces()
+            
+            places.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
             
             
-            
+            tableView.endUpdates()
             
         }
     }
     
-//    func deletePlaces(objectID: Int) {
-//        let object = realm?.objects(.self).filter("id = %@", objectID).first
-//        try! realm!.write {
-//            realm?.delete(object!)
-//        }
-//    }
+    func deletePlaces(objectID: Int) {
+        let object = realm?.objects(FavouritePlacesRealm.self).filter("id = %@", objectID).first
+        try! realm!.write {
+            realm?.delete(object!)
+        }
+    }
 
     
 }
 
-//MARK: Saving
-//MARK: Saving
-//MARK: Saving
+//MARK: Save changes
+//MARK: Save changes
+//MARK: Save changes

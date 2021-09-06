@@ -14,7 +14,7 @@
         "placeurl": "https://forrest.orty.io/",
         "discipline": "Restaurant",
         "phoneNum": "+38 067 772 7730",
-        "objectid": "1"
+        "objectid": 1
       },
       "geometry": {
         "type": "Point",
@@ -37,7 +37,7 @@
         "placeurl": "https://www.instagram.com/shopochem_/",
         "discipline": "Restaurant",
         "phoneNum": "+38 066 614 7777",
-        "objectid": "2"
+        "objectid": 2
       },
       "geometry": {
         "type": "Point",
@@ -60,7 +60,7 @@
         "placeurl": "https://dollar.com.ua/",
         "discipline": "Restaurant",
         "phoneNum": "+38 067 634 7772",
-        "objectid": "3"
+        "objectid": 3
       },
       "geometry": {
         "type": "Point",
@@ -83,7 +83,7 @@
         "placeurl": "http://www.damodara.dp.ua/",
         "discipline": "Restaurant",
         "phoneNum": "+38 067 636 2554",
-        "objectid": "4"
+        "objectid": 4
       },
       "geometry": {
         "type": "Point",
@@ -106,7 +106,7 @@
         "placeurl": "https://govinda.dp.ua/",
         "discipline": "Restaurant",
         "phoneNum": "+38 056 788 2985",
-        "objectid": "5"
+        "objectid": 5
       },
       "geometry": {
         "type": "Point",
@@ -129,7 +129,7 @@
         "placeurl": "https://www.instagram.com/gde_vse_bar/",
         "discipline": "Restaurant",
         "phoneNum": "+38 099 155 0648",
-        "objectid": "6"
+        "objectid": 6
       },
       "geometry": {
         "type": "Point",
@@ -152,7 +152,7 @@
         "placeurl": "https://www.facebook.com/vglavnihrolyah/",
         "discipline": "Restaurant",
         "phoneNum": "+380 96 283 8121",
-        "objectid": "13"
+        "objectid": 13
       },
       "geometry": {
         "type": "Point",
@@ -175,7 +175,7 @@
         "placeurl": "https://top20.ua/ru/dp/restorani-kafe-bari/kavyarni-ta-konditerski/white-arrow-kofeynya.html",
         "discipline": "Cafe",
         "phoneNum": "+38 099 066 1055",
-        "objectid": "7"
+        "objectid": 7
       },
       "geometry": {
         "type": "Point",
@@ -198,7 +198,7 @@
         "placeurl": "https://www.instagram.com/annapavlova_buffet/",
         "discipline": "Cafe",
         "phoneNum": "+38 093 298 3303",
-        "objectid": "8"
+        "objectid": 8
       },
       "geometry": {
         "type": "Point",
@@ -221,7 +221,7 @@
         "placeurl": "https://www.facebook.com/morzecoffee",
         "discipline": "Cafe",
         "phoneNum": "+38 096 484 0077",
-        "objectid": "9"
+        "objectid": 9
       },
       "geometry": {
         "type": "Point",
@@ -244,7 +244,7 @@
         "placeurl": "https://www.instagram.com/cupncup.dp/",
         "discipline": "Cafe",
         "phoneNum": "+38 096 049 8275",
-        "objectid": "10"
+        "objectid": 10
       },
       "geometry": {
         "type": "Point",
@@ -267,7 +267,7 @@
         "placeurl": "https://doubledecker.shop/",
         "discipline": "Cafe",
         "phoneNum": "+38 0562 392 248",
-        "objectid": "11"
+        "objectid": 11
       },
       "geometry": {
         "type": "Point",
@@ -290,7 +290,7 @@
         "placeurl": "https://www.facebook.com/vegancafednepr",
         "discipline": "Cafe",
         "phoneNum": "+38 067 387 8875",
-        "objectid": "12"
+        "objectid": 12
       },
       "geometry": {
         "type": "Point",
