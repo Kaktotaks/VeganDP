@@ -16,7 +16,6 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
     
     
     var places: [FavouritePlacesRealm] = []
-//    var dbPlaces: [Place] = []
     
     let realm = try? Realm()
     
@@ -118,7 +117,3 @@ extension FavouritePlacesViewController: UITableViewDelegate {
 
     
 }
-
-/////MARK: Save changes
-//MARK: Save changes
-//MARK: Save changes

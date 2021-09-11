@@ -28,6 +28,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h15-ud-joD">
                                 <rect key="frame" x="96" y="8" width="277" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="deQ-p7-76m"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="locationTitle">
                                         <attributes>

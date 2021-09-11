@@ -15,7 +15,5 @@ class FavouritePlacesRealm: Object {
     @objc dynamic var rating: String?
     @objc dynamic var descriptionText : String?
     @objc dynamic var placeurl: String?
-    @objc dynamic var visualurl: String?
     @objc dynamic var phoneNum: String?
-
 }
