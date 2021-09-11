@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var placesMenuButton: UIButton!
-    @IBOutlet weak var closeMenuButton: UIButton!
     
     private var places: [Place] = []
     

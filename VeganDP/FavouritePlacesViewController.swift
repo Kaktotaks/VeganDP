@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 import MapKit
 
+
 class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCellDelegate {
     func openRegion(forItem item: Int) {
     }
@@ -24,10 +25,11 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Favourite Places"
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
     }
     

@@ -16,7 +16,7 @@ class Place: NSObject, MKAnnotation {
     let rating: String?
     let descriptionText: String?
     let placeurl: String?
-    let visualurl: String?
+    let visualurl: [String]?
     let phoneNum: String?
     let longitude: Double?
     let latitude: Double?
@@ -30,7 +30,7 @@ class Place: NSObject, MKAnnotation {
         rating: String?,
         descriptionText: String?,
         placeurl: String?,
-        visualurl: String?,
+        visualurl: [String]?,
         phoneNum: String?,
         longitude: Double?,
         latitude: Double?,
@@ -72,7 +72,7 @@ class Place: NSObject, MKAnnotation {
         rating = properties["rating"] as? String
         descriptionText = properties["descriptionText"] as? String
         placeurl = properties["placeurl"] as? String
-        visualurl = properties["visualurl"] as? String
+        visualurl = properties["visualurl"] as? [String]
         phoneNum = properties["phoneNum"] as? String
         objectID = properties["objectID"] as? Int
         

@@ -4,11 +4,12 @@
 //
 //  Created by Леонід Шевченко on 19.08.2021.
 //
-
+import UIKit
 import Foundation
 import RealmSwift
 import WebKit
 import SafariServices
+
 
 class PlaceDetailViewController: UIViewController, WKUIDelegate{
     
@@ -21,6 +22,8 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var dlGradientView: GradientView!
     @IBOutlet weak var pnGradientView: GradientView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     var place: Place? = nil
     
@@ -28,6 +31,11 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let placeCollectionViewCellIdentifier = String(describing: PlacesPhotosCollectionViewCell.self)
+        
+        self.collectionView.register(UINib(nibName: placeCollectionViewCellIdentifier, bundle: nil),
+                                     forCellWithReuseIdentifier: placeCollectionViewCellIdentifier)
         
         self.descriptionLabel.text = self.place?.descriptionText
         self.locationTitleLabel.text = self.place?.title
@@ -44,7 +52,9 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getWebAddress()
+//        getWebAddress()
+        
+        self.collectionView.reloadData()
         
         self.title = self.place?.title
         
@@ -85,14 +95,14 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     
     
     // unwrap String property in URL
-    func getWebAddress(){
-        if let placesURLString = self.place?.visualurl {
-            if let placesURL = URL(string: placesURLString) {
-                let myRequest = URLRequest(url: placesURL)
-                detailWebView.load(myRequest)
-            }
-        }
-    }
+//    func getWebAddress(){
+//        if let placesURLString = self.place?.visualurl {
+//            if let placesURL = URL(string: placesURLString) {
+//                let myRequest = URLRequest(url: placesURL)
+//                detailWebView.load(myRequest)
+//            }
+//        }
+//    }
     
     
     @IBAction func goToSafariWebButtonPressed(_ sender: Any) {
@@ -107,19 +117,34 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         }
     }
     
-    // MARK: добавить вызов по нажатию на кнопку телефона ???
-    func makePhoneCall(phoneNumber: String) {
-        if let phoneURLString = self.place?.phoneNum {
-            if let phoneURL = URL(string: phoneURLString){
-            let alert = UIAlertController(title: ("Call " + (place?.phoneNum)! + "?"), message: nil, preferredStyle: .alert)
-                   alert.addAction(UIAlertAction(title: "Call", style: .default, handler: { (action) in
-                       UIApplication.shared.open(phoneURL as URL, options: [:], completionHandler: nil)
-                   }))
+    
+}
 
-                   alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                   self.present(alert, animated: true, completion: nil)
-               }
-    }
+extension PlaceDetailViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.place?.visualurl?.count ?? 0
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+      
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlacesPhotosCollectionViewCell", for: indexPath) as? PlacesPhotosCollectionViewCell {
+            cell.configureWith(profilePath: place?.visualurl?[indexPath.row])
+           
+            return cell
+        }
+    
+        return UICollectionViewCell()
+    }
+}
+
+extension PlaceDetailViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 330, height: 170)
+    }
 }
