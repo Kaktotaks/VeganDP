@@ -8,10 +8,15 @@
 
 import UIKit
 import RealmSwift
+import MapKit
 
-class FavouritePlacesViewController: UIViewController {
+class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCellDelegate {
+    func openRegion(forItem item: Int) {
+    }
+    
     
     var places: [FavouritePlacesRealm] = []
+//    var dbPlaces: [Place] = []
     
     let realm = try? Realm()
     
@@ -23,7 +28,8 @@ class FavouritePlacesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +56,25 @@ extension FavouritePlacesViewController:UITableViewDataSource {
         return places.count
     }
 
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+//        cell?.textLabel?.text = self.places[indexPath.row].title
+//        return cell ?? UITableViewCell()
+//    }
+//
+//}
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = self.places[indexPath.row].title
-        return cell ?? UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
+        cell.configureRealm(with: places[indexPath.row])
+        cell.delegate = self
+        cell.tag = indexPath.row
+        return cell
     }
     
 }
+    
 
 extension FavouritePlacesViewController: UITableViewDelegate {
     
@@ -80,9 +98,7 @@ extension FavouritePlacesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            
-//            self.deletePlaces(objectID: self.places[indexPath.row].objectid)
-//            self.places = self.getPlaces()
+//            deletePlaces(objectID: self.places[indexPath.row].objectID)
             
             places.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -103,6 +119,6 @@ extension FavouritePlacesViewController: UITableViewDelegate {
     
 }
 
-//MARK: Save changes
+/////MARK: Save changes
 //MARK: Save changes
 //MARK: Save changes

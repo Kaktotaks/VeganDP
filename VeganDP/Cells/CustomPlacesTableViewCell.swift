@@ -40,4 +40,11 @@ class CustomPlacesTableViewCell: UITableViewCell {
         self.cellImageView.image = place.image
     }
     
+    func configureRealm(with favouritePlacesRealm: FavouritePlacesRealm){
+        self.locationTitleLabel.text = favouritePlacesRealm.title
+        self.descriptionLabel.text = favouritePlacesRealm.descriptionText
+        self.ratingLabel.text = favouritePlacesRealm.rating
+//        self.cellImageView.image = favouritePlacesRealm.image
+    }
+    
 }

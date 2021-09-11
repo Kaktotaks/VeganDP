@@ -86,7 +86,7 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     
     // unwrap String property in URL
     func getWebAddress(){
-        if let placesURLString = self.place?.placeurl {
+        if let placesURLString = self.place?.visualurl {
             if let placesURL = URL(string: placesURLString) {
                 let myRequest = URLRequest(url: placesURL)
                 detailWebView.load(myRequest)

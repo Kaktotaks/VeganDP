@@ -97,7 +97,6 @@
 				E426B9F526C599BF00DF89E7 /* ViewController.swift */,
 				E4BFF0B226CEBA5B000CF689 /* PlaceDetailViewController.swift */,
 				E4BFF0C926D55ED5000CF689 /* FavouritePlacesViewController.swift */,
-				E4BFF0BB26D411FC000CF689 /* gradientView.swift */,
 				E44B89BD26CA4D79008ED8FC /* Map */,
 				E44B894B26C5A101008ED8FC /* Default */,
 				E44B894926C59E95008ED8FC /* Podfile */,
@@ -110,6 +109,7 @@
 		E44B894B26C5A101008ED8FC /* Default */ = {
 			isa = PBXGroup;
 			children = (
+				E4BFF0BB26D411FC000CF689 /* gradientView.swift */,
 				E426B9FC26C599C000DF89E7 /* LaunchScreen.storyboard */,
 				E426B9FA26C599C000DF89E7 /* Assets.xcassets */,
 				E426B9F326C599BF00DF89E7 /* SceneDelegate.swift */,

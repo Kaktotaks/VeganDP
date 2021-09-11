@@ -104,63 +104,11 @@ class ViewController: UIViewController {
         }
     }
     
-    //MARK: Show tableView animations
-    @IBAction func placesMenuButtonPressed(_ sender: Any) {
-        UITableView.animate(withDuration: 1,
-                            delay: 0,
-                            usingSpringWithDamping: 10,
-                            initialSpringVelocity: 0)
-        {self.tableView.frame = CGRect(x: 0,
-                                       y: 576,
-                                       width: 428,
-                                       height: 267) };
-        UIButton.animate(withDuration: 1,
-                         delay: 0,
-                         usingSpringWithDamping: 10,
-                         initialSpringVelocity: 0 )
-        {self.placesMenuButton.frame = CGRect(x: 180,
-                                              y: 851,
-                                              width: 64,
-                                              height: 40) };
-        UIButton.animate(withDuration: 1,
-                         delay: 0,
-                         usingSpringWithDamping: 10,
-                         initialSpringVelocity: 0)
-        {self.closeMenuButton.frame = CGRect(x: 350,
-                                             y: 510,
-                                             width: 50,
-                                             height: 50) }
-    }
     
-    //MARK: Hide tableView animations
-    @IBAction func closeMenuButtonPressed(_ sender: Any) {
-        
-        UITableView.animate(withDuration: 1,
-                            delay: 0,
-                            usingSpringWithDamping: 10,
-                            initialSpringVelocity: 0)
-        {self.tableView.frame = CGRect(x: 0,
-                                       y: 900,
-                                       width: 428,
-                                       height: 267) };
-        UIButton.animate(withDuration: 1,
-                         delay: 0,
-                         usingSpringWithDamping: 10,
-                         initialSpringVelocity: 0 )
-        {self.closeMenuButton.frame = CGRect(x: -50,
-                                             y: 525,
-                                             width: 50,
-                                             height: 50) };
-        UIButton.animate(withDuration: 1,
-                         delay: 0,
-                         usingSpringWithDamping: 10,
-                         initialSpringVelocity: 0 )
-        {self.placesMenuButton.frame = CGRect(x: 182,
-                                              y: 797,
-                                              width: 64,
-                                              height: 40) }
-        
-    }
+    
+    
+    
+    
     
     
 }
@@ -221,7 +169,9 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let identifier = String(describing: PlaceDetailViewController.self)
         

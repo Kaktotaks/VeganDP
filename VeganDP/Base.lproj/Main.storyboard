@@ -19,21 +19,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9uE-PS-Fkv">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaW-kh-Ges">
-                                <rect key="frame" x="182" y="787" width="64" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hAh-qT-Yof"/>
-                                </constraints>
-                                <state key="normal" image="menu"/>
-                                <connections>
-                                    <action selector="placesMenuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fMh-gd-ADV"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F6w-me-Gyz">
-                                <rect key="frame" x="0.0" y="851" width="428" height="267"/>
+                                <rect key="frame" x="0.0" y="614.33333333333337" width="428" height="228.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="267" id="qCa-9K-Jqj"/>
+                                    <constraint firstAttribute="height" constant="228.66999999999999" id="4g5-85-7m0"/>
                                 </constraints>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -51,17 +41,6 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pxv-Ul-KP9"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my0-sR-Wuv">
-                                <rect key="frame" x="428" y="438" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="H98-vx-Qbj"/>
-                                    <constraint firstAttribute="height" constant="50" id="uOY-ZL-J6M"/>
-                                </constraints>
-                                <state key="normal" image="down-arrow"/>
-                                <connections>
-                                    <action selector="closeMenuButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFF-KZ-uFd"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fsm-k7-gQI">
                                 <rect key="frame" x="265.66666666666669" y="104" width="98.333333333333314" height="32"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -91,26 +70,20 @@
                             <constraint firstItem="9uE-PS-Fkv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2HV-2E-GfN"/>
                             <constraint firstItem="F6w-me-Gyz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="30l-IM-K0U"/>
                             <constraint firstItem="F6w-me-Gyz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="65A-TR-WRQ"/>
-                            <constraint firstAttribute="trailing" secondItem="my0-sR-Wuv" secondAttribute="trailing" constant="-50" id="7c3-AA-ZWm"/>
                             <constraint firstAttribute="bottom" secondItem="9uE-PS-Fkv" secondAttribute="bottom" id="9iW-nk-wsx"/>
                             <constraint firstItem="9uE-PS-Fkv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D9t-o2-IBP"/>
-                            <constraint firstAttribute="bottom" secondItem="F6w-me-Gyz" secondAttribute="bottom" constant="-192" id="JCo-4p-LI5"/>
-                            <constraint firstItem="DaW-kh-Ges" firstAttribute="centerX" secondItem="F6w-me-Gyz" secondAttribute="centerX" id="MDU-JZ-sBX"/>
                             <constraint firstItem="fsm-k7-gQI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="65K-1Z-qOw" secondAttribute="trailing" constant="8" symbolic="YES" id="N44-Qd-EQN"/>
                             <constraint firstItem="65K-1Z-qOw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Oni-oC-L0H"/>
                             <constraint firstItem="9uE-PS-Fkv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QCA-ON-ad6"/>
                             <constraint firstItem="fsm-k7-gQI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="VYJ-Pi-XrH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DaW-kh-Ges" secondAttribute="bottom" constant="16" id="a12-bl-kyM"/>
                             <constraint firstItem="65K-1Z-qOw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="kx1-a1-vE7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fsm-k7-gQI" secondAttribute="trailing" constant="64" id="mh6-1R-qyv"/>
-                            <constraint firstItem="my0-sR-Wuv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qQG-vD-lS4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F6w-me-Gyz" secondAttribute="bottom" id="oOK-Yg-GA4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0te-lq-jya"/>
                     <connections>
-                        <outlet property="closeMenuButton" destination="my0-sR-Wuv" id="18a-lj-HBf"/>
                         <outlet property="mapView" destination="9uE-PS-Fkv" id="2Lz-i1-gbE"/>
-                        <outlet property="placesMenuButton" destination="DaW-kh-Ges" id="hvt-Yn-DIO"/>
                         <outlet property="tableView" destination="F6w-me-Gyz" id="E7N-hl-jN3"/>
                     </connections>
                 </viewController>
@@ -342,6 +315,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M08-ig-PMR" id="3eR-VL-sLf"/>
+                                    <outlet property="delegate" destination="M08-ig-PMR" id="SwU-as-hPc"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dOY-9S-NNB"/>
@@ -387,11 +364,9 @@
         <image name="car.2.fill" catalog="system" width="128" height="75"/>
         <image name="comments" width="64" height="64"/>
         <image name="compass" width="32" height="32"/>
-        <image name="down-arrow" width="64" height="64"/>
         <image name="favorite" width="32" height="32"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
-        <image name="menu" width="64" height="64"/>
         <image name="phone" width="64" height="64"/>
         <image name="web" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
