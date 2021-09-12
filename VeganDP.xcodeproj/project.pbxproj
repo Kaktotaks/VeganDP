@@ -140,13 +140,29 @@
 			path = GeoJsonModels;
 			sourceTree = "<group>";
 		};
+		E45B345126EDDA1300B529D8 /* CustomPlacesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */,
+				E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */,
+			);
+			path = CustomPlacesTableViewCell;
+			sourceTree = "<group>";
+		};
+		E45B345226EDDA1700B529D8 /* PlacesPhotosCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E45B344D26ED508400B529D8 /* PlacesPhotosCollectionViewCell.swift */,
+				E45B344E26ED508400B529D8 /* PlacesPhotosCollectionViewCell.xib */,
+			);
+			path = PlacesPhotosCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		E4BFF0B426CFA5D8000CF689 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */,
-				E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */,
-				E45B344D26ED508400B529D8 /* PlacesPhotosCollectionViewCell.swift */,
-				E45B344E26ED508400B529D8 /* PlacesPhotosCollectionViewCell.xib */,
+				E45B345226EDDA1700B529D8 /* PlacesPhotosCollectionViewCell */,
+				E45B345126EDDA1300B529D8 /* CustomPlacesTableViewCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

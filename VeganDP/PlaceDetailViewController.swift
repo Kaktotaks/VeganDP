@@ -145,6 +145,6 @@ extension PlaceDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 330, height: 170)
+        return CGSize(width: 350, height: 200)
     }
 }
