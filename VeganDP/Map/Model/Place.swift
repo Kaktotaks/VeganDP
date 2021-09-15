@@ -55,7 +55,6 @@ class Place: NSObject, MKAnnotation {
     }
     
     init?(feature: MKGeoJSONFeature) {
-        // 1
         guard
             let point = feature.geometry.first as? MKPointAnnotation,
             let propertiesData = feature.properties,
@@ -65,7 +64,6 @@ class Place: NSObject, MKAnnotation {
             return nil
         }
         
-        // 3
         title = properties["title"] as? String
         locationName = properties["location"] as? String
         discipline = properties["discipline"] as? String
@@ -119,7 +117,6 @@ class Place: NSObject, MKAnnotation {
     }
     
     // Set the images to iur annotation
-    
     var image: UIImage {
         guard let name = discipline else {
             return #imageLiteral(resourceName: "greenflag")

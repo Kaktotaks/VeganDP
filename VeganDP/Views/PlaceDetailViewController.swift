@@ -7,15 +7,13 @@
 import UIKit
 import Foundation
 import RealmSwift
-import WebKit
 import SafariServices
 
 
-class PlaceDetailViewController: UIViewController, WKUIDelegate{
+class PlaceDetailViewController: UIViewController{
     
     
     @IBOutlet weak var locationTypeImageView: UIImageView!
-    @IBOutlet weak var detailWebView: WKWebView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -32,6 +30,11 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
+    }
+    
+    func setupUI() {
         let placeCollectionViewCellIdentifier = String(describing: PlacesPhotosCollectionViewCell.self)
         
         self.collectionView.register(UINib(nibName: placeCollectionViewCellIdentifier, bundle: nil),
@@ -45,14 +48,11 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         
         self.dlGradientView.layer.cornerRadius = 16
         self.pnGradientView.layer.cornerRadius = 16
-        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        getWebAddress()
         
         self.collectionView.reloadData()
         
@@ -68,6 +68,7 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
     @IBAction func addToFavouriteButtonPressed(_ sender: Any) {
         let placeRealm = FavouritePlacesRealm()
         
+        placeRealm.rating = self.place?.rating
         placeRealm.descriptionText = self.place?.descriptionText
         placeRealm.discipline = self.place?.discipline
         placeRealm.locationName = self.place?.locationName
@@ -91,18 +92,6 @@ class PlaceDetailViewController: UIViewController, WKUIDelegate{
         
         present(alert, animated: true)
     }
-    
-    
-    
-    // unwrap String property in URL
-//    func getWebAddress(){
-//        if let placesURLString = self.place?.visualurl {
-//            if let placesURL = URL(string: placesURLString) {
-//                let myRequest = URLRequest(url: placesURL)
-//                detailWebView.load(myRequest)
-//            }
-//        }
-//    }
     
     
     @IBAction func goToSafariWebButtonPressed(_ sender: Any) {

@@ -56,14 +56,6 @@ extension FavouritePlacesViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
     }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-//        cell?.textLabel?.text = self.places[indexPath.row].title
-//        return cell ?? UITableViewCell()
-//    }
-//
-//}
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -99,14 +91,11 @@ extension FavouritePlacesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-//            deletePlaces(objectID: self.places[indexPath.row].objectID)
             
             places.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
-            
             tableView.endUpdates()
-            
         }
     }
     

@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SDWebImage
 
 class FavouritePlacesRealm: Object {
     @objc dynamic var title: String = ""
