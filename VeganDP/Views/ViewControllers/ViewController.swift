@@ -11,7 +11,7 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
-    // Создаем объект реалм
+    // Create a realm object
     let realm = try? Realm()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -53,12 +53,7 @@ class ViewController: UIViewController {
         mapView.addAnnotations(places)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
+    // MARK: - Actions
     @IBAction func mapTypeSwitchPressed(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.mapView.mapType = .standard
@@ -76,44 +71,32 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
+    // MARK: - decoding data from VeganRestaurantCafeDP.geojson
     private func loadInitialData() {
-        // 1
         guard
             let fileName = Bundle.main.url(forResource: "VeganRestaurantCafeDP", withExtension: "geojson"),
             let placesData = try? Data(contentsOf: fileName)
         else {
             return
         }
-        
         do {
-            // 2
             let features = try MKGeoJSONDecoder()
                 .decode(placesData)
                 .compactMap { $0 as? MKGeoJSONFeature }
-            // 3
+            
             let validPlaces = features.compactMap(Place.init)
-            // 4
+            
             places.append(contentsOf: validPlaces)
         } catch {
-            // 5
+            
             print("Unexpected error: \(error).")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 //MARK: Map extensions
-
 private extension MKMapView {
+    
     func centerToLocation(
         _ location: CLLocation,
         regionRadius: CLLocationDistance = 3000
@@ -137,17 +120,13 @@ extension ViewController: MKMapViewDelegate {
         guard let place = view.annotation as? Place else {
             return
         }
-        
-        let launchOptions = [
-            MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
-        ]
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         place.mapItem?.openInMaps(launchOptions: launchOptions)
     }
     
 }
 
-//MARK: TableView extensions
-
+//MARK:- TableView extensions
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -155,7 +134,6 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
         cell.configure(with: places[indexPath.row])
@@ -167,7 +145,6 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -176,7 +153,6 @@ extension ViewController: UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailViewController = storyboard.instantiateViewController(identifier: identifier) as? PlaceDetailViewController {
             detailViewController.place = self.places[indexPath.row]
-            
             
             self.navigationController?.pushViewController(detailViewController, animated: true)
         }
@@ -193,11 +169,10 @@ extension ViewController: UITableViewDelegate {
             cell.alpha = 1.0
         }
     }
-    
 }
 
-
 extension ViewController: CustomPlacesTableViewCellDelegate {
+    
     func openRegion(forItem item: Int) {
         let geoObject = self.places[item]
         

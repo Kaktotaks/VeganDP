@@ -12,12 +12,6 @@ import os
 class PlacesPhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         

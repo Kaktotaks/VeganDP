@@ -75,14 +75,14 @@ class PlaceDetailViewController: UIViewController{
         placeRealm.phoneNum = self.place?.phoneNum
         placeRealm.placeurl = self.place?.placeurl
         placeRealm.title = self.place?.title ?? ""
-
+        
         try? realm?.write {
             realm?.add(placeRealm)
         }
         self.showAlert()
     }
     
-    // Alert
+    // Alert func when place added to favourites (addToFavouriteButtonPressed)
     func showAlert() {
         let alert = UIAlertController(title: "Added to favourites 💚 ! ", message: nil, preferredStyle: .alert)
         
@@ -93,7 +93,7 @@ class PlaceDetailViewController: UIViewController{
         present(alert, animated: true)
     }
     
-    
+    // Open website of picked places
     @IBAction func goToSafariWebButtonPressed(_ sender: Any) {
         if let placesURLString = self.place?.placeurl {
             if let placesURL = URL(string: placesURLString){
@@ -109,6 +109,7 @@ class PlaceDetailViewController: UIViewController{
     
 }
 
+//MARK: - CollectionView extensions
 extension PlaceDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -118,13 +119,13 @@ extension PlaceDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-      
+        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlacesPhotosCollectionViewCell", for: indexPath) as? PlacesPhotosCollectionViewCell {
             cell.configureWith(profilePath: place?.visualurl?[indexPath.row])
-           
+            
             return cell
         }
-    
+        
         return UICollectionViewCell()
     }
 }

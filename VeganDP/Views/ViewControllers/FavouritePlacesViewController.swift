@@ -15,7 +15,6 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
     func openRegion(forItem item: Int) {
     }
     
-    
     var places: [FavouritePlacesRealm] = []
     
     let realm = try? Realm()
@@ -35,13 +34,13 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         self.places = self.getPlaces()
         self.tableView.reloadData()
     }
-
+    
     private func getPlaces() -> [FavouritePlacesRealm] {
-
+        
         var places = [FavouritePlacesRealm]()
         guard let placesResults = realm?.objects(FavouritePlacesRealm.self) else { return [] }
         for place in placesResults {
@@ -49,9 +48,10 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
         }
         return places
     }
-
+    
 }
 
+//MARK: TableView extensions
 extension FavouritePlacesViewController:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return places.count
@@ -67,7 +67,7 @@ extension FavouritePlacesViewController:UITableViewDataSource {
     }
     
 }
-    
+
 
 extension FavouritePlacesViewController: UITableViewDelegate {
     
@@ -98,13 +98,4 @@ extension FavouritePlacesViewController: UITableViewDelegate {
             tableView.endUpdates()
         }
     }
-    
-    func deletePlaces(objectID: Int) {
-        let object = realm?.objects(FavouritePlacesRealm.self).filter("id = %@", objectID).first
-        try! realm!.write {
-            realm?.delete(object!)
-        }
-    }
-
-    
 }

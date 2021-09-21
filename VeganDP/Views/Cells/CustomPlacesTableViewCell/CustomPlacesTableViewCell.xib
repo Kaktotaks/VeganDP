@@ -63,11 +63,14 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-ZX-IZX">
                                 <rect key="frame" x="511" y="23" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="7aL-ho-v0s"/>
                                     <constraint firstAttribute="height" constant="50" id="d3N-Ga-67A"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="placeholder"/>
+                                <state key="normal" backgroundImage="placeholder">
+                                    <color key="titleShadowColor" systemColor="systemGreenColor"/>
+                                </state>
                                 <connections>
                                     <action selector="locationButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3dX-AT-BU0"/>
                                 </connections>
@@ -126,6 +129,9 @@
         <image name="plantHeart" width="64" height="64"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
