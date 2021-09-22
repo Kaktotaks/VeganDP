@@ -1,25 +1,21 @@
 {
   "images" : [
     {
-      "filename" : "placeholder копія.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "placeholder копія 2.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "placeholder копія 2-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "placeholder.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
