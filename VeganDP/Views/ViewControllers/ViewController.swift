@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "VeganDP"
+        self.title = Constants.ViewControllerTitles.veganDP
         
-        self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.customPlacesTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: Constants.customPlacesTableViewCellIdentifier)
         
         // Set initial location in DP
         let initialLocation = CLLocation(latitude: 48.458130, longitude: 35.047344)
@@ -135,7 +135,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.customPlacesTableViewCellIdentifier) as? CustomPlacesTableViewCell else { return UITableViewCell() }
         cell.configure(with: places[indexPath.row])
         cell.delegate = self
         cell.tag = indexPath.row

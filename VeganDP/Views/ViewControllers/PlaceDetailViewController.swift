@@ -84,10 +84,10 @@ class PlaceDetailViewController: UIViewController{
     
     // Alert func when place added to favourites (addToFavouriteButtonPressed)
     func showAlert() {
-        let alert = UIAlertController(title: "Added to favourites 💚 ! ", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: Constants.Alerts.addedToFavourites, message: nil, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK 👌", style: .cancel, handler: { action in
-            print("Tapped OK 👌")
+        alert.addAction(UIAlertAction(title: Constants.Alerts.ok, style: .cancel, handler: { action in
+            print(Constants.Alerts.tappedOk)
         }))
         
         present(alert, animated: true)
@@ -120,7 +120,7 @@ extension PlaceDetailViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlacesPhotosCollectionViewCell", for: indexPath) as? PlacesPhotosCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.placesPhotosCollectionViewCellIdentifier, for: indexPath) as? PlacesPhotosCollectionViewCell {
             cell.configureWith(profilePath: place?.visualurl?[indexPath.row])
             
             return cell

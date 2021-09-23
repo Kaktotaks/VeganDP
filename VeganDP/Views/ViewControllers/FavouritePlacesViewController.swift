@@ -24,12 +24,12 @@ class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCell
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Favourite Places"
+        self.title = Constants.ViewControllerTitles.favourites
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        self.tableView.register(UINib(nibName: "CustomPlacesTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomPlacesTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.customPlacesTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: Constants.customPlacesTableViewCellIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +59,7 @@ extension FavouritePlacesViewController:UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomPlacesTableViewCell") as? CustomPlacesTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.customPlacesTableViewCellIdentifier) as? CustomPlacesTableViewCell else { return UITableViewCell() }
         cell.configureRealm(with: places[indexPath.row])
         cell.delegate = self
         cell.tag = indexPath.row
