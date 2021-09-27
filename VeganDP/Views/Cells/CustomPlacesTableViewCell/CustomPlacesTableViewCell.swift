@@ -44,7 +44,6 @@ class CustomPlacesTableViewCell: UITableViewCell {
         self.locationTitleLabel.text = favouritePlacesRealm.title
         self.descriptionLabel.text = favouritePlacesRealm.descriptionText
         self.ratingLabel.text = favouritePlacesRealm.rating
-//        self.cellImageView.image = favouritePlacesRealm.image
     }
     
 }

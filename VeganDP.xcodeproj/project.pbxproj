@@ -142,8 +142,8 @@
 		E45B345126EDDA1300B529D8 /* CustomPlacesTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */,
 				E4BFF0B526CFA686000CF689 /* CustomPlacesTableViewCell.swift */,
+				E4BFF0B626CFA686000CF689 /* CustomPlacesTableViewCell.xib */,
 			);
 			path = CustomPlacesTableViewCell;
 			sourceTree = "<group>";

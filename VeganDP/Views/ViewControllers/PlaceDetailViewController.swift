@@ -76,6 +76,7 @@ class PlaceDetailViewController: UIViewController{
         placeRealm.placeurl = self.place?.placeurl
         placeRealm.title = self.place?.title ?? ""
         
+        
         try? realm?.write {
             realm?.add(placeRealm)
         }

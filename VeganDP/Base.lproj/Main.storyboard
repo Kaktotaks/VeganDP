@@ -101,9 +101,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhg-Zh-i8k">
-                                <rect key="frame" x="0.0" y="419.66666666666669" width="428" height="24"/>
+                                <rect key="frame" x="0.0" y="419.66666666666669" width="428" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="1RR-5p-mWW"/>
+                                    <constraint firstAttribute="height" constant="58" id="1RR-5p-mWW"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="locationTitle">
@@ -116,7 +116,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="addressLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUx-mt-Ick">
-                                <rect key="frame" x="0.0" y="443.66666666666669" width="428" height="24"/>
+                                <rect key="frame" x="0.0" y="477.66666666666669" width="428" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="xqJ-dK-9l1"/>
                                 </constraints>
@@ -133,7 +133,7 @@
                                 </constraints>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlR-Dk-fLP" customClass="GradientView" customModule="VeganDP" customModuleProvider="target">
-                                <rect key="frame" x="16" y="483.66666666666674" width="396" height="100"/>
+                                <rect key="frame" x="16" y="517.66666666666663" width="396" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptionLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbf-8i-EPq">
                                         <rect key="frame" x="64" y="0.0" width="324" height="100"/>
@@ -142,7 +142,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comments" translatesAutoresizingMaskIntoConstraints="NO" id="ey2-PL-vhL">
-                                        <rect key="frame" x="8" y="29.999999999999943" width="40" height="40"/>
+                                        <rect key="frame" x="8" y="30" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="IdG-sc-Bha"/>
                                             <constraint firstAttribute="width" constant="40" id="oxy-Vx-cub"/>
@@ -168,7 +168,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiK-Z9-Pnw" customClass="GradientView" customModule="VeganDP" customModuleProvider="target">
-                                <rect key="frame" x="16" y="591.66666666666663" width="396" height="40"/>
+                                <rect key="frame" x="16" y="625.66666666666663" width="396" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phoneNumberLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-pP-hcJ">
                                         <rect key="frame" x="46" y="0.0" width="342" height="40"/>
@@ -221,7 +221,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSQ-oc-Qpf">
-                                <rect key="frame" x="189" y="647.66666666666663" width="50" height="50"/>
+                                <rect key="frame" x="189" y="681.66666666666663" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="B9U-xO-LL0"/>
                                     <constraint firstAttribute="width" secondItem="OSQ-oc-Qpf" secondAttribute="height" multiplier="1:1" id="hps-PG-0kW"/>
@@ -295,7 +295,7 @@
         <scene sceneID="KvF-Av-i11">
             <objects>
                 <navigationController id="N8m-ZR-uTy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" image="favorite" id="a1y-hJ-oNg"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="favourite" id="a1y-hJ-oNg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fzO-9l-Un0">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -357,12 +357,11 @@
         <scene sceneID="ldy-DY-qKD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="smr-QX-ZCP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Places" image="compass" id="Qhg-9e-Swk"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="planet-earth" id="Qhg-9e-Swk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="efD-7v-WCD">
+                    <navigationBar key="navigationBar" alpha="0.5" contentMode="scaleToFill" id="efD-7v-WCD">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -378,11 +377,11 @@
         <image name="car.2" catalog="system" width="128" height="72"/>
         <image name="car.2.fill" catalog="system" width="128" height="73"/>
         <image name="comments" width="64" height="64"/>
-        <image name="compass" width="32" height="32"/>
-        <image name="favorite" width="32" height="32"/>
+        <image name="favourite" width="32" height="32"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="phone" width="64" height="64"/>
+        <image name="planet-earth" width="32" height="32"/>
         <image name="web" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

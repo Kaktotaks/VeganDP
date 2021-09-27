@@ -12,8 +12,7 @@ import MapKit
 
 
 class FavouritePlacesViewController: UIViewController, CustomPlacesTableViewCellDelegate {
-    func openRegion(forItem item: Int) {
-    }
+    func openRegion(forItem item: Int) {}
     
     var places: [FavouritePlacesRealm] = []
     
