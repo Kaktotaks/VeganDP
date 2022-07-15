@@ -7,12 +7,9 @@
 
 import UIKit
 import MapKit
-import RealmSwift
+import FloatingPanel
 
-class ViewController: UIViewController {
-    
-    // Create a realm object
-    let realm = try? Realm()
+class ViewController: UIViewController, FloatingPanelControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +18,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // fpcContent
+        let fpc = FloatingPanelController()
+        let appearance = SurfaceAppearance()
+        fpc.delegate = self
+        
+        guard let contentVC = storyboard?.instantiateViewController(withIdentifier: "fpcContent") as? ContentViewController else { return }
+        
+        fpc.set(contentViewController: contentVC)
+        fpc.addPanel(toParent: self)
+        appearance.cornerRadius = 32.0
+        fpc.surfaceView.appearance = appearance
+        // fpcContent
         
         self.title = Constants.ViewControllerTitles.veganDP
         

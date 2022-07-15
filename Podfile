@@ -4,5 +4,6 @@ target 'VeganDP' do
 
 pod 'RealmSwift'
 pod 'SDWebImage'
+pod 'FloatingPanel'
 
 end

@@ -1,4 +1,5 @@
 PODS:
+  - FloatingPanel (2.5.3)
   - Realm (10.12.0):
     - Realm/Headers (= 10.12.0)
   - Realm/Headers (10.12.0)
@@ -9,20 +10,23 @@ PODS:
   - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
+  - FloatingPanel
   - RealmSwift
   - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - FloatingPanel
     - Realm
     - RealmSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
+  FloatingPanel: 3cee815e9ded75b632543fa73ab655a1ef941452
   Realm: 32488213acb44660539c619d620cec1bac046166
   RealmSwift: 0abdca6231d5ff8a4f84cef9c1121ef95a483faf
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 971ba21171d665abc7ce7783167a16c9612fff15
+PODFILE CHECKSUM: d14ebb61b463b11d9febbabe36c3ab7d0f35ca06
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
